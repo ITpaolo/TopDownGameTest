@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Browsergame</title>
+    <title>Game 3</title>
     <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
     <style type="text/css">
         body {
@@ -34,6 +34,8 @@
     var crate;
     var stonebigs;
     var stonebig = 0;
+    var explosion;
+    var standingstill;
 
 
 
@@ -51,7 +53,8 @@
             render: this.render,
             collectCherry: this.collectCherry,
             collectCoin: this.collectCoin,
-            collectStar: this.collectStar
+            collectStar: this.collectStar,
+            collectCrate: this.collectCrate
         });
     }
 
@@ -71,7 +74,8 @@
             this.game.load.image('crate', 'Crate64.png');
             this.game.load.image('trap', 'wall.png');
             this.game.load.image('stonebig', 'assets/stone.png');
-            this.game.load.spritesheet('dude', 'standing-still.png');
+            this.game.load.spritesheet('dude', 'standing-still.png', 32, 32);
+            this.game.load.spritesheet('explosion', 'explosion.png', 32, 32, 10);
         },
 
         create: function () {
@@ -80,13 +84,13 @@
 
             // Load the map.
             map = this.game.add.tilemap('map');
-            map.addTilesetImage('desert', 'tiles', 'coin', 'crate', 'crate32', 'star', 'stone');
+            map.addTilesetImage('desert', 'tiles', 'coin', 'crate', 'crate32', 'star', 'stone', 'explosion', 'standing-still');
             map.setCollisionBetween(1, 99);
 
             layer = map.createLayer('level1');
 
             layer.resizeWorld();
-            //layer.wrap = true;
+            layer.wrap = true;
 
             walls = this.game.add.group();
             walls.enableBody = true;
@@ -111,6 +115,13 @@
             stonebigs = this.game.add.group();
             stonebigs.enableBody = true;
 
+            explosion = this.game.add.group();
+            explosion.enableBody = true;
+
+            standingstill = this.game.add.group();
+            standingstill.enableBody = true;
+
+
             map.createFromObjects('ol1', 10, 'wall', 0, true, false, walls);
             map.createFromObjects('ol1', 31, 'cherry', 0, true, false, cherrys);
             map.createFromObjects('ol1', 60, 'coin', 0, true, false, coins);
@@ -119,6 +130,8 @@
             map.createFromObjects('ol1', 34, 'trap', 0, true, false, trap);
             map.createFromObjects('ol1', 62, 'star', 0, true, false, stars);
             map.createFromObjects('ol1', 73, 'stonebig', 0, true, false, stonebigs);
+            map.createFromObjects('ol1', 74, 'explosion', 0, true, false, explosion);
+            map.createFromObjects('ol1', 89, 'dude', 0, true, false, standingstill);
 
 
             walls.immovable = true;
@@ -148,20 +161,26 @@
             console.log('Anzahl star: ' + stars.length);
             console.log('Anzahl Stonebig: ' + stonebigs.length);
 
-            sprite = this.game.add.sprite(-5, 205, 'dude');
+            sprite = this.game.add.sprite(10, 225, 'dude');
             sprite.anchor.set(0.5);
             this.game.physics.arcade.enable(sprite);
-            sprite.body.collideWorldBounds = true;
+            sprite.body.collideWorldBounds = false;
+
 
             coins.callAll('animations.add', 'animations', 'spin', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 10, true);
             coins.callAll('animations.play', 'animations', 'spin');
 
+            explosion.callAll('animations.add', 'animations', 'explosions', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 10, true);
+            explosion.callAll('animations.play', 'animations', 'explosions');
+
+            standingstill.callAll('animations.add', 'animations', 'walk', [0, 1, 2, 3, 4, 5], 10, true);
+            standingstill.callAll('animations.play', 'animations', 'walk');
+
+            var walk = sprite.animations.add('walk');
+
             //  Add animations to sprites
             /*coins.callAll('animations.add', 'animations', 'spin', [0, 1, 2, 3, 4, 5], 10, true);
             coins.callAll('animations.play', 'animations', 'spin');*/
-
-            /**/
-
 
             CherryText = this.game.add.text(16, 8, 'Cherrys: 0', {fontSize: '32px', fill: '#000'});
             CoinText = this.game.add.text(16, 32, 'Coins: 0', {fontSize: '32px', fill: '#000'});
@@ -171,10 +190,10 @@
             sprite.body.setSize(16, 16, 0, 0);
 
             //  We'll set a lower max angular velocity here to keep it from going totally nuts
-            //sprite.body.maxAngular = 500;
+            sprite.body.maxAngular = 500;
 
             //  Apply a drag otherwise the sprite will just spin and never slow down
-            //sprite.body.angularDrag = 50;
+            sprite.body.angularDrag = 50;
 
             this.game.camera.follow(sprite);
 
@@ -214,6 +233,12 @@
             StarText.text = 'Stars: ' + star;
 
         },
+        collectCrate: function (player, crate) {
+
+            //alert(player);
+            // Removes the coin from the screen
+            crate.kill();
+        },
         update: function () {
 
             //  Collide the player and the coins with the maps
@@ -221,6 +246,7 @@
             this.game.physics.arcade.overlap(sprite, cherrys, this.collectCherry);
             this.game.physics.arcade.overlap(sprite, coins, this.collectCoin);
             this.game.physics.arcade.overlap(sprite, stars, this.collectStar);
+            this.game.physics.arcade.overlap(sprite, crate, this.collectCrate);
             this.game.physics.arcade.collide(sprite, walls);
             this.game.physics.arcade.collide(sprite, kisten);
             this.game.physics.arcade.collide(walls, kisten);
@@ -247,14 +273,30 @@
 
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP))
             {
+                sprite.animations.play('walk', 10, true);
                 this.game.physics.arcade.velocityFromAngle(sprite.angle, 100, sprite.body.velocity);
             }
+            else {
+                sprite.animations.stop('walk', 10, true);
+            }
 
+            if (sprite.body.x < -30) {
+                sprite.body.x = this.game._width-30;
+            }
+            if (sprite.body.x > 650) {
+                sprite.body.x = this.game._width-650;
+            }
+            if (sprite.body.y < -50) {
+                sprite.body.y = this.game._width-50;
+            }
+            if (sprite.body.y > 660) {
+                sprite.body.y = this.game._width-650;
+            }
         },
 
         render: function () {
 
-
+            this.game.debug.bodyInfo(sprite, 32, 100);
 
         }
     };

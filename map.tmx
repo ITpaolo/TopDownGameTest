@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="217">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="224">
  <tileset firstgid="1" name="desert" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
   <image source="C:/Program Files/Tiled/examples/tmw_desert_spacing.png" width="265" height="199"/>
  </tileset>
  <tileset firstgid="49" name="coin" tilewidth="16" tileheight="16" tilecount="12" columns="12">
   <image source="coin.png" width="192" height="16"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="11" duration="100"/>
+   </animation>
+  </tile>
   <tile id="11">
    <animation>
     <frame tileid="0" duration="100"/>
@@ -36,6 +52,37 @@
  </tileset>
  <tileset firstgid="73" name="stone" tilewidth="32" tileheight="32" tilecount="1" columns="1">
   <image source="assets/stone.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="74" name="explosion" tilewidth="32" tileheight="32" tilecount="10" columns="10">
+  <image source="explosion.png" width="320" height="32"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="9" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="84" name="standing-still" tilewidth="32" tileheight="32" tilecount="6" columns="6">
+  <image source="standing-still.png" width="192" height="32"/>
+  <tile id="5">
+   <animation>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+   </animation>
+  </tile>
  </tileset>
  <layer name="level1" width="20" height="20">
   <data encoding="csv">
@@ -159,7 +206,12 @@
   <object id="210" gid="62" x="384" y="416" width="32" height="32"/>
   <object id="211" gid="62" x="352" y="416" width="32" height="32"/>
   <object id="213" name="Crate" gid="72" x="320" y="510" width="32" height="32"/>
-  <object id="215" gid="73" x="352" y="608" width="32" height="32"/>
+  <object id="215" name="StoneBig" gid="73" x="352" y="608" width="32" height="32"/>
   <object id="216" gid="73" x="352" y="576" width="32" height="32"/>
+  <object id="217" gid="22" x="185" y="327" width="32" height="32"/>
+  <object id="218" gid="22" x="127" y="326" width="32" height="32"/>
+  <object id="219" gid="22" x="85" y="353" width="32" height="32"/>
+  <object id="222" name="explosion" gid="74" x="287" y="510" width="32" height="32"/>
+  <object id="223" name="Guy" gid="89" x="353" y="320" width="32" height="32"/>
  </objectgroup>
 </map>
