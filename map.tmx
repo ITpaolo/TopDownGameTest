@@ -233,6 +233,6 @@
   <object id="216" gid="73" x="352" y="576" width="32" height="32"/>
   <object id="222" name="explosion" gid="74" x="288" y="511" width="32" height="32"/>
   <object id="223" name="Guy" gid="89" x="353" y="320" width="32" height="32"/>
-  <object id="226" name="Zombie" gid="90" x="288" y="321" width="32" height="32"/>
+  <object id="226" name="zombies" gid="90" x="288" y="321" width="32" height="32"/>
  </objectgroup>
 </map>
