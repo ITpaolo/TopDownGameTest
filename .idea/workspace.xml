@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/index.html" line="221" />
-    <bookmark url="file://$PROJECT_DIR$/index.html" line="283" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/index.html" line="229" />
+    <bookmark url="file://$PROJECT_DIR$/index.html" line="293" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3b89240-7903-437b-8cfa-54ea43a11358" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/zombies/FreeArt_Topdown_Zombies.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/zombies/ZombieWalk_normal_scaled_fast.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/zombies/ZombieWalk_odd_fast.gif" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map.json" afterPath="$PROJECT_DIR$/map.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map.tmx" afterPath="$PROJECT_DIR$/map.tmx" />
     </list>
     <ignored path="game2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +36,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="76" column="75" selection-start-line="76" selection-start-column="75" selection-end-line="76" selection-end-column="75" />
+            <state relative-caret-position="538">
+              <caret line="187" column="127" selection-start-line="187" selection-start-column="127" selection-end-line="187" selection-end-column="127" />
               <folding />
             </state>
           </provider>
@@ -41,9 +46,11 @@
       <file leaf-file-name="map.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="1255" column="25" selection-start-line="1255" selection-start-column="23" selection-end-line="1255" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="260">
+              <caret line="1231" column="25" selection-start-line="1231" selection-start-column="23" selection-end-line="1231" selection-end-column="25" />
+              <folding>
+                <marker date="1478792822572" expanded="true" signature="34121:34139" ph="{&quot;id&quot;: 222...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,8 +78,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1911" />
-    <option name="y" value="118" />
+    <option name="x" value="1912" />
+    <option name="y" value="108" />
     <option name="width" value="1936" />
     <option name="height" value="1176" />
   </component>
@@ -197,18 +204,19 @@
       <workItem from="1478533353993" duration="110000" />
       <workItem from="1478595428400" duration="9566000" />
       <workItem from="1478615443046" duration="1246000" />
-      <workItem from="1478768151925" duration="8520000" />
+      <workItem from="1478768151925" duration="11770000" />
+      <workItem from="1478790062854" duration="1894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78260000" />
+    <option name="totallyTimeSpent" value="83404000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1911" y="118" width="1936" height="1176" extended-state="0" />
+    <frame x="1912" y="108" width="1936" height="1176" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2739872" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2771855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -240,7 +248,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -255,9 +263,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map.json">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20723">
+          <caret line="1219" column="25" selection-start-line="1219" selection-start-column="23" selection-end-line="1219" selection-end-column="25" />
+          <folding>
+            <marker date="1478792822572" expanded="true" signature="34121:34139" ph="{&quot;id&quot;: 222...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map.json">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21131">
           <caret line="1243" column="23" selection-start-line="1243" selection-start-column="23" selection-end-line="1243" selection-end-column="25" />
-          <folding />
+          <folding>
+            <marker date="1478792822572" expanded="true" signature="34121:34139" ph="{&quot;id&quot;: 222...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -273,7 +301,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21131">
           <caret line="1243" column="23" selection-start-line="1243" selection-start-column="23" selection-end-line="1243" selection-end-column="25" />
-          <folding />
+          <folding>
+            <marker date="1478792822572" expanded="true" signature="34121:34139" ph="{&quot;id&quot;: 222...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -289,7 +319,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20723">
           <caret line="1219" column="25" selection-start-line="1219" selection-start-column="25" selection-end-line="1219" selection-end-column="25" />
-          <folding />
+          <folding>
+            <marker date="1478792822572" expanded="true" signature="34121:34139" ph="{&quot;id&quot;: 222...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -305,7 +337,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20723">
           <caret line="1219" column="25" selection-start-line="1219" selection-start-column="25" selection-end-line="1219" selection-end-column="25" />
-          <folding />
+          <folding>
+            <marker date="1478792822572" expanded="true" signature="34121:34139" ph="{&quot;id&quot;: 222...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -321,7 +355,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20723">
           <caret line="1219" column="25" selection-start-line="1219" selection-start-column="25" selection-end-line="1219" selection-end-column="25" />
-          <folding />
+          <folding>
+            <marker date="1478792822572" expanded="true" signature="34121:34139" ph="{&quot;id&quot;: 222...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -337,7 +373,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10115">
           <caret line="595" column="25" selection-start-line="595" selection-start-column="25" selection-end-line="595" selection-end-column="25" />
-          <folding />
+          <folding>
+            <marker date="1478792822572" expanded="true" signature="34121:34139" ph="{&quot;id&quot;: 222...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -397,11 +435,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/walking1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/walking1.png" />
     <entry file="file://$PROJECT_DIR$/terrain_atlas.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -484,16 +518,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="1255" column="25" selection-start-line="1255" selection-start-column="23" selection-end-line="1255" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="260">
+          <caret line="1231" column="25" selection-start-line="1231" selection-start-column="23" selection-end-line="1231" selection-end-column="25" />
+          <folding>
+            <marker date="1478792822572" expanded="true" signature="34121:34139" ph="{&quot;id&quot;: 222...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="76" column="75" selection-start-line="76" selection-start-column="75" selection-end-line="76" selection-end-column="75" />
+        <state relative-caret-position="538">
+          <caret line="187" column="127" selection-start-line="187" selection-start-column="127" selection-end-line="187" selection-end-column="127" />
           <folding />
         </state>
       </provider>
