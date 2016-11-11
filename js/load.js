@@ -17,6 +17,7 @@ var loadState = {
         this.game.load.spritesheet('zombies', 'assets/zombies/zombieMove.png', 32, 32);
 
         this.game.load.image('startscreen', 'startgame.png');
+        this.game.load.image('startgamebutton', 'startgamebutton.png');
         this.game.load.bitmapFont('carrier_command', 'fonts/carrier_command.png', 'fonts/carrier_command.xml');
 
     },
