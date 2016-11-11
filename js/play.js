@@ -59,24 +59,23 @@ var playState = {
         map.createFromObjects('ol1', 90, 'zombies', 0, true, false, zombies);
 
 
-
         walls.immovable = true;
         walls.moves = false;
-        walls.setAll('body.immovable','body',true);
+        walls.setAll('body.immovable', 'body', true);
 
         kisten.immovable = false;
         kisten.moves = false;
-        kisten.setAll('body.mass','body', 1);
+        kisten.setAll('body.mass', 'body', 1);
         kisten.setAll('body.collideWorldBounds', true);
 
         stonebigs.immovable = false;
         stonebigs.moves = false;
-        stonebigs.setAll('body.mass','body', 1);
+        stonebigs.setAll('body.mass', 'body', 1);
         stonebigs.setAll('body.collideWorldBounds', true);
 
         crate.immovable = false;
         crate.moves = false;
-        crate.setAll('body.mass','body', 1);
+        crate.setAll('body.mass', 'body', 1);
         crate.setAll('body.collideWorldBounds', true);
 
         console.log('Anzahl Wände: ' + walls.length);
@@ -128,6 +127,44 @@ var playState = {
 
         cursors = this.game.input.keyboard.createCursorKeys();
     },
+    collectCherry: function (player, cherrys) {
+
+        //alert(player);
+        // Removes the coin from the screen
+        console.log('cherry');
+        cherrys.kill();
+        cherry += 1;
+        CherryText.text = 'Cherrys: ' + cherry;
+
+    },
+    collectCoin: function (player, coins) {
+
+        //alert(player);
+        // Removes the coin from the screen
+        console.log('Coins');
+        coins.kill();
+
+        coin += 1;
+        CoinText.text = 'Coins: ' + coin;
+
+    },
+    collectStar: function (player, stars) {
+
+        //alert(player);
+        // Removes the coin from the screen
+        console.log('stars');
+        stars.kill();
+
+        star += 1;
+        StarText.text = 'Stars: ' + star;
+
+    },
+    collectCrate: function (player, crate) {
+
+        //alert(player);
+        // Removes the coin from the screen
+        crate.kill();
+    },
 
     update: function () {
         //  Collide the player and the coins with the maps
@@ -151,17 +188,14 @@ var playState = {
         /*sprite.width = 32;
          sprite.height = 32;*/
 
-        if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
-        {
+        if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
             sprite.body.angularVelocity = -150;
         }
-        else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
-        {
+        else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
             sprite.body.angularVelocity = 150;
         }
 
-        if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP))
-        {
+        if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
             sprite.animations.play('walk', 10, true);
             this.game.physics.arcade.velocityFromAngle(sprite.angle, 70, sprite.body.velocity);
         }
@@ -170,16 +204,16 @@ var playState = {
         }
 
         if (sprite.body.x < -30) {
-            sprite.body.x = this.game._width-30;
+            sprite.body.x = this.game._width - 30;
         }
         if (sprite.body.x > 650) {
-            sprite.body.x = this.game._width-650;
+            sprite.body.x = this.game._width - 650;
         }
         if (sprite.body.y < -50) {
-            sprite.body.y = this.game._height-50;
+            sprite.body.y = this.game._height - 50;
         }
         if (sprite.body.y > 660) {
-            sprite.body.y = this.game._height-650;
+            sprite.body.y = this.game._height - 650;
         }
 
         //Enemy AI follow player
