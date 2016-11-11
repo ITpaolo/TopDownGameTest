@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Game 3</title>
+    <script type="text/javascript" src="phaser.min.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js/load.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/play.js"></script>
+    <script type="text/javascript" src="js/win.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
     <style type="text/css">
+
         @font-face {
             font-family: 'zombiesstation';
             src: url('fonts/ZOMBIES_STATION.ttf');
@@ -11,7 +19,9 @@
         body {
             margin: 0;
         }
-        h1 {
+
+
+        /*h1 {
             position: absolute;
             top: 400px;
             left: 225px;
@@ -37,26 +47,76 @@
             text-shadow: 0 0 5px black;
             font-size:45px;
             font-family: zombiesstation;
-        }
+        }*/
 
     </style>
 </head>
 <body>
-<!--<input type=button onClick="parent.location='game.html'" value='Start Game'>-->
+<script type="text/javascript">
+
+    var map;
+    var layer;
+
+    var cursors;
+    var sprite;
+    var cherrys;
+    var CherryText;
+    var cherry = 0;
+    var coins;
+    var coin = 0;
+    var CoinText;
+    var stars;
+    var star = 0;
+    var StarText;
+    var walls;
+    var kisten;
+    var trap;
+    var crate;
+    var stonebigs;
+    var stonebig = 0;
+    var explosion;
+    var standingstill;
+    var zombies;
+
+</script>
+<!--<input type=button onClick="parent.location='game.html'" value='Start Game'>
 
 <img src="startgame.png" alt="startgame" width="640" height="640">
 <h2> Game Name </h2>
 <h1><a href="game.html">Start Game</a></h1>
 
 
-
-
-<!--
-
 Font Autor: 'Typemachine Supply.co' http://www.1001fonts.com/zombies-station-font.html
 Autor Picture: 'ActonLiz' https://pixabay.com/de/apokalypse-post-apokalyptisches-1325398/
-
-
 -->
+
+    <div id="gameDiv"> </div>
 </body>
 </html>
+
+
+
+<!--<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>My First Game</title>
+    <script type="text/javascript" src="phaser.min.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js/load.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/play.js"></script>
+    <script type="text/javascript" src="js/win.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="gameDiv"> </div>
+</body>
+</html>-->
