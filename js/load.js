@@ -1,5 +1,6 @@
 var loadState = {
     preload: function() {
+
         var loadingLabel = game.add.text(80, 150, 'loading...', {font: '30px Courier', fill: '#ffffff'});
 
         var tilemapdebug = this.game.load.tilemap('map', 'map.json', null, Phaser.Tilemap.TILED_JSON);
@@ -13,6 +14,7 @@ var loadState = {
         this.game.load.image('trap', 'wall.png');
         this.game.load.image('stonebig', 'assets/stone.png');
         this.game.load.image('gameoverscreen', 'assets/gameover.png');
+        this.game.load.image('imagepausemenu', 'assets/pausemenu.jpg');
         this.game.load.spritesheet('dude', 'standing-still.png', 32, 32);
         this.game.load.spritesheet('explosion', 'explosion.png', 32, 32, 10);
         this.game.load.spritesheet('zombies', 'assets/zombies/zombieMove.png', 32, 32);
