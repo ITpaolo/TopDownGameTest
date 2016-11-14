@@ -126,6 +126,10 @@ var playState = {
         this.game.camera.follow(sprite, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
         cursors = this.game.input.keyboard.createCursorKeys();
+
+        /*stateText = game.add.text(500, 320, ' ', {font: '50px Arial', fill: '#F2F2F2'});
+        stateText.anchor.setTo(1.1, 0.2);
+        stateText.visible = false;*/
     },
     collectCherry: function (player, cherrys) {
 
@@ -202,7 +206,7 @@ var playState = {
         else {
             sprite.animations.stop('walk', 10, true);
         }
-
+/*
         if (sprite.body.x < -30) {
             sprite.body.x = this.game._width - 30;
         }
@@ -215,16 +219,20 @@ var playState = {
         if (sprite.body.y > 660) {
             sprite.body.y = this.game._height - 650;
         }
+*/
+        if (sprite.body.y > 650) {
+            game.state.start('gameover');
+        }
+    }
+    /*gameover: function () {
 
-        if (sprite.body.y > 700)
-        {
-            game.state.start('over');
+        if (sprite.body.y > 650) {
+            game.state.start('gameover');
+            console.log(alert);
         }
 
-    }
+        /*Win: function () {
+         game.state.start('win');
+         }*/
 
-
-    /*Win: function () {
-        game.state.start('win');
-    }*/
 };
