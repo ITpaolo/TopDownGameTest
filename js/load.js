@@ -12,6 +12,7 @@ var loadState = {
         this.game.load.image('crate', 'Crate64.png');
         this.game.load.image('trap', 'wall.png');
         this.game.load.image('stonebig', 'assets/stone.png');
+        this.game.load.image("gameover","assets/gameover.png");
         this.game.load.spritesheet('dude', 'standing-still.png', 32, 32);
         this.game.load.spritesheet('explosion', 'explosion.png', 32, 32, 10);
         this.game.load.spritesheet('zombies', 'assets/zombies/zombieMove.png', 32, 32);

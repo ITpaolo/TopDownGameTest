@@ -216,12 +216,15 @@ var playState = {
             sprite.body.y = this.game._height - 650;
         }
 
-        //Enemy AI follow player
+        if (sprite.body.y > 700)
+        {
+            game.state.start('over');
+        }
 
-    },
-
-
-    Win: function () {
-        game.state.start('win');
     }
+
+
+    /*Win: function () {
+        game.state.start('win');
+    }*/
 };
