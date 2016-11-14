@@ -5,7 +5,6 @@ var playState = {
 
         game.state.start('pausemenu');
 
-        // Load the map.
         map = this.game.add.tilemap('map');
         map.addTilesetImage('desert', 'tiles', 'coin', 'crate', 'crate32', 'star', 'stone', 'explosion', 'standing-still', 'ZombieMove');
         map.setCollisionBetween(1, 99);
@@ -122,8 +121,6 @@ var playState = {
     },
     collectCherry: function (player, cherrys) {
 
-        //alert(player);
-        // Removes the coin from the screen
         console.log('cherry');
         cherrys.kill();
         cherry += 1;
@@ -132,8 +129,6 @@ var playState = {
     },
     collectCoin: function (player, coins) {
 
-        //alert(player);
-        // Removes the coin from the screen
         console.log('Coins');
         coins.kill();
 
@@ -143,8 +138,6 @@ var playState = {
     },
     collectStar: function (player, stars) {
 
-        //alert(player);
-        // Removes the coin from the screen
         console.log('stars');
         stars.kill();
 
@@ -154,8 +147,6 @@ var playState = {
     },
     collectCrate: function (player, crate) {
 
-        //alert(player);
-        // Removes the coin from the screen
         crate.kill();
     },
 
@@ -178,8 +169,6 @@ var playState = {
         sprite.body.velocity.x = 0;
         sprite.body.velocity.y = 0;
         sprite.body.angularVelocity = 0;
-        /*sprite.width = 32;
-         sprite.height = 32;*/
 
         sprite.rotation = game.physics.arcade.angleToPointer(sprite);
 
@@ -209,7 +198,7 @@ var playState = {
         {
             sprite.animations.stop('walk', 10, true);
         }
-/*
+/* // Go trough map
         if (sprite.body.x < -30) {
             sprite.body.x = this.game._width - 30;
         }
