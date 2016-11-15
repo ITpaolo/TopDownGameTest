@@ -46,6 +46,8 @@ var playState = {
         zombies = this.game.add.group();
         zombies.enableBody = true;
 
+        var moving = false;
+
 
         map.createFromObjects('ol1', 10, 'wall', 0, true, false, walls);
         map.createFromObjects('ol1', 31, 'cherry', 0, true, false, cherrys);
@@ -176,30 +178,47 @@ var playState = {
 
         sprite.rotation = game.physics.arcade.angleToPointer(sprite);
 
+        this.moving = true;
+
         //Fix Moevement WASD, ex. S,D Parallel == Animation Stop!
         if (game.input.keyboard.isDown(Phaser.Keyboard.A))
         {
             sprite.x -= 1;
-            sprite.animations.play('walk', 10, true);
-        }
-        else if (game.input.keyboard.isDown(Phaser.Keyboard.D))
-        {
-            sprite.x += 1;
-            sprite.animations.play('walk', 10, true);
+            //sprite.animations.play('walk', 10, true);
         }
 
-        else if (game.input.keyboard.isDown(Phaser.Keyboard.W))
+        if (game.input.keyboard.isDown(Phaser.Keyboard.D))
+        {
+            sprite.x += 1;
+            //sprite.animations.play('walk', 10, true);
+        }
+
+
+        if (game.input.keyboard.isDown(Phaser.Keyboard.W))
         {
             sprite.y -= 1;
-            sprite.animations.play('walk', 10, true);
+            //sprite.animations.play('walk', 10, true);
         }
-        else if (game.input.keyboard.isDown(Phaser.Keyboard.S))
+
+        if (game.input.keyboard.isDown(Phaser.Keyboard.S))
         {
             sprite.y += 1;
-            sprite.animations.play('walk', 10, true);
+            //sprite.animations.play('walk', 10, true);
         }
-        else
-        {
+
+        // Wenn alle Tasten oben, dann stoppen
+        if (!game.input.keyboard.isDown(Phaser.Keyboard.A)
+        && !game.input.keyboard.isDown(Phaser.Keyboard.W)
+        && !game.input.keyboard.isDown(Phaser.Keyboard.S)
+        && !game.input.keyboard.isDown(Phaser.Keyboard.D)) {
+            this.moving = false;
+        }
+
+
+
+        if (this.moving) {
+            sprite.animations.play('walk', 10, true);
+        } else {
             sprite.animations.stop('walk', 10, true);
         }
 
