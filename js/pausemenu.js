@@ -15,6 +15,7 @@ var pausemenuState = {
             CherryText.visible = false;
             CoinText.visible = false;
             StarText.visible = false;
+            PauseText.visible = false;
         } else {
             game.paused = false;
             imagepausemenu.visible = false;
@@ -22,6 +23,7 @@ var pausemenuState = {
             CherryText.visible = true;
             CoinText.visible = true;
             StarText.visible = true;
+            PauseText.visible = true;
         }
     }
 

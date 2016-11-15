@@ -103,7 +103,6 @@ var playState = {
         this.game.physics.arcade.enable(zombies, Phaser.Physics.ARCADE);
         sprite.body.collideWorldBounds = false;
 
-
         coins.callAll('animations.add', 'animations', 'spin', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 10, true);
         coins.callAll('animations.play', 'animations', 'spin');
 
@@ -122,6 +121,7 @@ var playState = {
         CherryText = this.game.add.text(16, 8, 'Cherrys: 0', {fontSize: '32px', fill: '#000'});
         CoinText = this.game.add.text(16, 32, 'Coins: 0', {fontSize: '32px', fill: '#000'});
         StarText = this.game.add.text(16, 57, 'Stars: 0', {fontSize: '32px', fill: '#000'});
+        PauseText = this.game.add.text(16, 600, 'Press "Backspace" for Pause Game', {fontSize: '32px', fill: '#000'});
 
         this.game.camera.follow(sprite, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
@@ -132,7 +132,7 @@ var playState = {
         spaceKey.onDown.add(pausemenuState.togglePause, this);
 
     },
-    BulletsWall: function (bullets, walls) {
+    BulletsWall: function (bullets) {
 
         bullets.kill();
 
