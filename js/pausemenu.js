@@ -1,27 +1,11 @@
 var pausemenuState = {
 
-    create: function () {
-
-        //game.physics.startSystem(Phaser.Physics.ARCADE);
-        //cursors = game.input.keyboard.createCursorKeys();
-
-
-
-
-        //imagepausemenu = game.add.sprite(320, 320, 'imagepausemenu');
-
-
-        //console.log(spaceKey);
-        //this.togglePause();
-    },
     togglePause: function () {
 
-        //console.log(game.physics.arcade.isPaused);
         game.physics.arcade.isPaused = (game.physics.arcade.isPaused) ? false : true;
         console.log('pauseaction');
 
         if (game.physics.arcade.isPaused) {
-            // pausebild
             game.paused = true;
             imagepausemenupic = game.add.sprite(0, 0, 'imagepausemenupic');
             imagepausemenu = game.add.text(690, 250, ' Game Paused \n Press "Backspace" to continue', {font: '50px carrier_command', fill: '#FFFFFF'});
@@ -32,7 +16,6 @@ var pausemenuState = {
             CoinText.visible = false;
             StarText.visible = false;
         } else {
-            // kein pausebild
             game.paused = false;
             imagepausemenu.visible = false;
             imagepausemenupic.visible = false;

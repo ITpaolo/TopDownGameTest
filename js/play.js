@@ -120,9 +120,6 @@ var playState = {
 
 
         spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-        //game.input.keyboard.addKeyCapture([ Phaser.Keyboard.LEFT, Phaser.Keyboard.RIGHT, Phaser.Keyboard.SPACEBAR ]);
-        //spaceKey.enabled = true;
-        //spaceKey = cursors.Add({'space':Phaser.Keyboard.SPACEBAR});
         spaceKey.onDown.add(pausemenuState.togglePause, this);
 
     },
@@ -231,21 +228,6 @@ var playState = {
 
     },*/
 
-
-/* // Go trough map
-        if (sprite.body.x < -30) {
-            sprite.body.x = this.game._width - 30;
-        }
-        if (sprite.body.x > 650) {
-            sprite.body.x = this.game._width - 650;
-        }
-        if (sprite.body.y < -50) {
-            sprite.body.y = this.game._height - 50;
-        }
-        if (sprite.body.y > 660) {
-            sprite.body.y = this.game._height - 650;
-        }
-*/
         if (sprite.body.y > 650) {
             game.state.start('gameover');
         }
