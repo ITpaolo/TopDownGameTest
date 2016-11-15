@@ -3,7 +3,7 @@ var playState = {
     create: function () {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
-        game.state.start('pausemenu');
+        //game.state.start('pausemenu');
 
         map = this.game.add.tilemap('map');
         map.addTilesetImage('desert', 'tiles', 'coin', 'crate', 'crate32', 'star', 'stone', 'explosion', 'standing-still', 'ZombieMove');
@@ -118,6 +118,13 @@ var playState = {
 
         cursors = this.game.input.keyboard.createCursorKeys();
 
+
+        spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+        //game.input.keyboard.addKeyCapture([ Phaser.Keyboard.LEFT, Phaser.Keyboard.RIGHT, Phaser.Keyboard.SPACEBAR ]);
+        //spaceKey.enabled = true;
+        //spaceKey = cursors.Add({'space':Phaser.Keyboard.SPACEBAR});
+        spaceKey.onDown.add(pausemenuState.togglePause, this);
+
     },
     collectCherry: function (player, cherrys) {
 
@@ -198,6 +205,33 @@ var playState = {
         {
             sprite.animations.stop('walk', 10, true);
         }
+
+        /* // Alt-Movement
+        if (cursors.up.isDown)
+        {
+            this.game.physics.arcade.accelerationFromRotation(sprite.rotation, 4000, sprite.body.acceleration);
+        }
+        else
+        {
+            sprite.body.acceleration.set(0);
+        }
+
+        if (cursors.left.isDown)
+        {
+            sprite.body.angularVelocity = -100;
+        }
+        else if (cursors.right.isDown)
+        {
+            sprite.body.angularVelocity = 100;
+        }
+        else
+        {
+            sprite.body.angularVelocity = 0;
+        }
+
+    },*/
+
+
 /* // Go trough map
         if (sprite.body.x < -30) {
             sprite.body.x = this.game._width - 30;
