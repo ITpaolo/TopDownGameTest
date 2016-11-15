@@ -53,8 +53,6 @@ var playState = {
         bullets.setAll('checkWorldBounds', true);
         bullets.setAll('outOfBoundsKill', true);
 
-        var moving = false;
-
 
         map.createFromObjects('ol1', 10, 'wall', 0, true, false, walls);
         map.createFromObjects('ol1', 31, 'cherry', 0, true, false, cherrys);
@@ -138,6 +136,12 @@ var playState = {
         spaceKey.onDown.add(pausemenuState.togglePause, this);
 
     },
+
+    BulletsSpriteBot1: function (bullets) {
+
+        bullets.kill();
+
+    },
     BulletsWall: function (bullets) {
 
         bullets.kill();
@@ -182,6 +186,7 @@ var playState = {
         this.game.physics.arcade.overlap(sprite, stars, this.collectStar);
         this.game.physics.arcade.overlap(sprite, crate, this.collectCrate);
         this.game.physics.arcade.collide(bullets, walls, this.BulletsWall);
+        this.game.physics.arcade.collide(bullets, spriteBot1, this.BulletsSpriteBot1);
         this.game.physics.arcade.collide(sprite, walls);
         this.game.physics.arcade.collide(sprite, kisten);
         this.game.physics.arcade.collide(walls, kisten);

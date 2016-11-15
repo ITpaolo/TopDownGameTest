@@ -3,11 +3,11 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/index.html" line="33" />
     <bookmark url="file://$PROJECT_DIR$/index.html" line="0" mnemonic="1" />
-    <bookmark url="file://$PROJECT_DIR$/js/play.js" line="296" />
+    <bookmark url="file://$PROJECT_DIR$/js/play.js" line="301" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3b89240-7903-437b-8cfa-54ea43a11358" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/game.js" afterPath="$PROJECT_DIR$/js/game.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/play.js" afterPath="$PROJECT_DIR$/js/play.js" />
     </list>
     <ignored path="game2.iws" />
@@ -82,8 +82,8 @@
       <file leaf-file-name="play.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/play.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1045">
-              <caret line="278" column="9" selection-start-line="278" selection-start-column="9" selection-end-line="278" selection-end-column="9" />
+            <state relative-caret-position="575">
+              <caret line="204" column="27" selection-start-line="204" selection-start-column="27" selection-end-line="204" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -162,8 +162,8 @@
         <option value="$PROJECT_DIR$/js/menu.js" />
         <option value="$PROJECT_DIR$/js/load.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/pausemenu.js" />
+        <option value="$PROJECT_DIR$/js/game.js" />
         <option value="$PROJECT_DIR$/js/play.js" />
       </list>
     </option>
@@ -321,12 +321,12 @@
       <workItem from="1478854767715" duration="14883000" />
       <workItem from="1478871853678" duration="6965000" />
       <workItem from="1479114890668" duration="25989000" />
-      <workItem from="1479201806828" duration="20652000" />
+      <workItem from="1479201806828" duration="21037000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155916000" />
+    <option name="totallyTimeSpent" value="156301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -533,22 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/boot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/load.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/gameover.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -565,6 +549,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/boot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/load.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -575,8 +575,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="278" column="9" selection-start-line="278" selection-start-column="9" selection-end-line="278" selection-end-column="9" />
+        <state relative-caret-position="575">
+          <caret line="204" column="27" selection-start-line="204" selection-start-column="27" selection-end-line="204" selection-end-column="27" />
           <folding />
         </state>
       </provider>
