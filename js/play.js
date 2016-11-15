@@ -189,10 +189,9 @@ var playState = {
         this.game.physics.arcade.collide(sprite, stonebigs);
         this.game.physics.arcade.collide(walls, stonebigs);
 
-        this.game.physics.arcade.moveToObject(spriteBot1, sprite, 150);
-
         spriteBot1.body.velocity.x = 0;
         spriteBot1.body.velocity.y = 0;
+        this.game.physics.arcade.moveToObject(spriteBot1, sprite, 30);
 
         sprite.rotation = game.physics.arcade.angleToPointer(sprite);
 
@@ -273,6 +272,18 @@ var playState = {
         if (sprite.body.y > 650) {
             game.state.start('gameover');
         }
+
+
+        if(spriteBot1.body.velocity.x < 0 && spriteBot1.body.velocity.y < 150 && spriteBot1.body.velocity.y > 0) {
+            spriteBot1.animations.play('walk', 10, true);
+        } else if(spriteBot1.body.velocity.x > 0 && spriteBot1.body.velocity.y < 150 && spriteBot1.body.velocity.y > 0) {
+            spriteBot1.animations.play('walk', 10, true);
+        } else if(spriteBot1.body.velocity.y < 0) {
+            spriteBot1.animations.play('walk', 10, true);
+        } else if(spriteBot1.body.velocity.y > 0) {
+            spriteBot1.animations.play('walk', 10, true);
+        }
+
     },
 
     fire: function() {
