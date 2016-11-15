@@ -121,6 +121,7 @@ var playState = {
         zombies.callAll('animations.play', 'animations', 'zombieswalk');
 
         var walk = sprite.animations.add('walk');
+        var walkBot = spriteBot1.animations.add('walk');
 
 
         CherryText = this.game.add.text(16, 8, 'Cherrys: 0', {fontSize: '32px', fill: '#000'});
@@ -194,6 +195,7 @@ var playState = {
         this.game.physics.arcade.moveToObject(spriteBot1, sprite, 30);
 
         sprite.rotation = game.physics.arcade.angleToPointer(sprite);
+        spriteBot1.rotation = game.physics.arcade.angleBetween(spriteBot1, sprite);
 
         this.moving = true;
 
@@ -235,8 +237,11 @@ var playState = {
 
         if (this.moving) {
             sprite.animations.play('walk', 10, true);
+            spriteBot1.animations.play('walk', 10, true);
+
         } else {
             sprite.animations.stop('walk', 10, true);
+            spriteBot1.animations.play('walk', 10, true);
         }
 
         if (game.input.activePointer.isDown)
@@ -271,17 +276,6 @@ var playState = {
 
         if (sprite.body.y > 650) {
             game.state.start('gameover');
-        }
-
-
-        if(spriteBot1.body.velocity.x < 0 && spriteBot1.body.velocity.y < 150 && spriteBot1.body.velocity.y > 0) {
-            spriteBot1.animations.play('walk', 10, true);
-        } else if(spriteBot1.body.velocity.x > 0 && spriteBot1.body.velocity.y < 150 && spriteBot1.body.velocity.y > 0) {
-            spriteBot1.animations.play('walk', 10, true);
-        } else if(spriteBot1.body.velocity.y < 0) {
-            spriteBot1.animations.play('walk', 10, true);
-        } else if(spriteBot1.body.velocity.y > 0) {
-            spriteBot1.animations.play('walk', 10, true);
         }
 
     },
