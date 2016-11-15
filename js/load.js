@@ -16,6 +16,7 @@ var loadState = {
         this.game.load.image('gameoverscreen', 'assets/gameover.png');
         this.game.load.image('imagepausemenu', 'assets/pausemenu.png');
         this.game.load.image('imagepausemenupic', 'assets/pausemenu.png');
+        this.game.load.image('bullet', 'assets/bullet.png');
         this.game.load.spritesheet('dude', 'standing-still.png', 32, 32);
         this.game.load.spritesheet('explosion', 'explosion.png', 32, 32, 10);
         this.game.load.spritesheet('zombies', 'assets/zombies/zombieMove.png', 32, 32);

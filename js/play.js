@@ -46,6 +46,13 @@ var playState = {
         zombies = this.game.add.group();
         zombies.enableBody = true;
 
+        bullets = game.add.group();
+        bullets.enableBody = true;
+        bullets.physicsBodyType = Phaser.Physics.ARCADE;
+        bullets.createMultiple(50, 'bullet');
+        bullets.setAll('checkWorldBounds', true);
+        bullets.setAll('outOfBoundsKill', true);
+
         var moving = false;
 
 
@@ -125,6 +132,11 @@ var playState = {
         spaceKey.onDown.add(pausemenuState.togglePause, this);
 
     },
+    BulletsWall: function (bullets, walls) {
+
+        bullets.kill();
+
+    },
     collectCherry: function (player, cherrys) {
 
         console.log('cherry');
@@ -163,6 +175,7 @@ var playState = {
         this.game.physics.arcade.overlap(sprite, coins, this.collectCoin);
         this.game.physics.arcade.overlap(sprite, stars, this.collectStar);
         this.game.physics.arcade.overlap(sprite, crate, this.collectCrate);
+        this.game.physics.arcade.collide(bullets, walls, this.BulletsWall);
         this.game.physics.arcade.collide(sprite, walls);
         this.game.physics.arcade.collide(sprite, kisten);
         this.game.physics.arcade.collide(walls, kisten);
@@ -222,6 +235,11 @@ var playState = {
             sprite.animations.stop('walk', 10, true);
         }
 
+        if (game.input.activePointer.isDown)
+        {
+            this.fire();
+        }
+
         /* // Alt-Movement
         if (cursors.up.isDown)
         {
@@ -250,7 +268,22 @@ var playState = {
         if (sprite.body.y > 650) {
             game.state.start('gameover');
         }
+    },
+
+    fire: function() {
+
+    if (game.time.now > nextFire && bullets.countDead() > 0)
+    {
+        nextFire = game.time.now + fireRate;
+
+        var bullet = bullets.getFirstDead();
+
+        bullet.reset(sprite.x - 8, sprite.y - 8);
+
+        game.physics.arcade.moveToPointer(bullet, 200);
     }
+
+}
 
 
 };
