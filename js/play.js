@@ -99,6 +99,9 @@ var playState = {
         sprite = this.game.add.sprite(50, 500, 'zombies');
         sprite.anchor.setTo(0.5, 0.5);
 
+        spriteBot1 = this.game.add.sprite(50, 300, 'zombies');
+        spriteBot1.anchor.setTo(0.5, 0.5);
+
         this.game.physics.arcade.enable(sprite, Phaser.Physics.ARCADE);
         this.game.physics.arcade.enable(zombies, Phaser.Physics.ARCADE);
         sprite.body.collideWorldBounds = false;
@@ -184,10 +187,17 @@ var playState = {
         this.game.physics.arcade.collide(sprite, stonebigs);
         this.game.physics.arcade.collide(walls, stonebigs);
 
+        this.game.physics.arcade.moveToObject(spriteBot1, sprite, 10, 10);
+        this.game.physics.arcade.enable(sprite);
+        this.game.physics.arcade.enable(spriteBot1);
 
         sprite.body.velocity.x = 0;
         sprite.body.velocity.y = 0;
         sprite.body.angularVelocity = 0;
+
+        spriteBot1.body.velocity.x = 0;
+        spriteBot1.body.velocity.y = 0;
+        spriteBot1.body.angularVelocity = 0;
 
         sprite.rotation = game.physics.arcade.angleToPointer(sprite);
 
@@ -284,6 +294,5 @@ var playState = {
     }
 
 }
-
 
 };

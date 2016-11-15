@@ -7,7 +7,8 @@ var game = new Phaser.Game(640, 640, Phaser.CANVAS, 'gameDiv', {
     collectCoin: this.collectCoin,
     collectStar: this.collectStar,
     collectCrate: this.collectCrate,
-    BulletsWall: this.BulletsWall
+    BulletsWall: this.BulletsWall,
+    FollowPlayer: this.FollowPlayer
 });
 
 game.state.add('boot', bootState);
